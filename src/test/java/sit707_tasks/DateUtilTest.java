@@ -78,7 +78,7 @@ public class DateUtilTest {
 	    Assert.assertEquals(12, date.getMonth());
 	}
 
-	
+	//Leap year Test Cases Starts here
 	@Test
 	public void testMaxFebruary28ShouldIncrementToFebruary29() {
 	    DateUtil date = new DateUtil(28, 2, 2024);
@@ -109,6 +109,7 @@ public class DateUtilTest {
 	    Assert.assertEquals(3, date.getMonth());
 	}
 
+	//Leap year Test Cases Ends above
 	@Test
 	public void testMaxMarch31ShouldIncrementToApril1() {
 	    DateUtil date = new DateUtil(31, 3, 2024);
@@ -209,5 +210,151 @@ public class DateUtilTest {
 	    Assert.assertEquals(1, date.getMonth());
 	    Assert.assertEquals(2025, date.getYear());
 	}
+	
+	
+	// Table Cases 
+	
+	@Test
+    public void testCase1B() {
+        DateUtil date = new DateUtil(1, 6, 1994);
+        System.out.println("1B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(2, date.getDay());
+        Assert.assertEquals(6, date.getMonth());
+    }
+
+    @Test
+    public void testCase2B() {
+        DateUtil date = new DateUtil(2, 6, 1994);
+        System.out.println("2B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(3, date.getDay());
+        Assert.assertEquals(6, date.getMonth());
+    }
+
+    @Test
+    public void testCase3B() {
+        DateUtil date = new DateUtil(15, 6, 1994);
+        System.out.println("3B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(6, date.getMonth());
+    }
+
+    @Test
+    public void testCase4B() {
+        DateUtil date = new DateUtil(30, 6, 1994);
+        System.out.println("4B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(1, date.getDay());
+        Assert.assertEquals(7, date.getMonth());
+    }
+
+    @Test
+    public void testCase5B() {
+        DateUtil date = new DateUtil(31, 6, 1994);
+        System.out.println("5B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(1, date.getDay());
+        Assert.assertEquals(7, date.getMonth());
+    }
+
+    @Test
+    public void testCase6B() {
+        DateUtil date = new DateUtil(15, 1, 1994);
+        System.out.println("6B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(1, date.getMonth());
+    }
+
+    @Test
+    public void testCase7B() {
+        DateUtil date = new DateUtil(15, 2, 1994);
+        System.out.println("7B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(2, date.getMonth());
+    }
+
+    @Test
+    public void testCase8B() {
+        DateUtil date = new DateUtil(15, 11, 1994);
+        System.out.println("8B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(11, date.getMonth());
+    }
+
+    @Test
+    public void testCase9B() {
+        DateUtil date = new DateUtil(15, 12, 1994);
+        System.out.println("9B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(12, date.getMonth());
+    }
+
+    @Test
+    public void testCase10B() {
+        DateUtil date = new DateUtil(15, 6, 1700);
+        System.out.println("10B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(6, date.getMonth());
+    }
+
+    @Test
+    public void testCase11B() {
+        DateUtil date = new DateUtil(15, 6, 1701);
+        System.out.println("11B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(6, date.getMonth());
+    }
+
+    @Test
+    public void testCase12B() {
+        DateUtil date = new DateUtil(15, 6, 2023);
+        System.out.println("12B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(6, date.getMonth());
+    }
+
+    @Test
+    public void testCase13B() {
+        DateUtil date = new DateUtil(15, 6, 2024);
+        System.out.println("13B:");
+        System.out.println("> " + date);
+        date.increment();
+        System.out.println(date);
+        Assert.assertEquals(16, date.getDay());
+        Assert.assertEquals(6, date.getMonth());
+    }
 
 }
